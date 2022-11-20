@@ -1,0 +1,37 @@
+server:
+  port: 5555
+
+security:
+  oauth2:
+    resourceserver:
+      client:
+        clientId: web
+        clientSecret: secret
+      accessTokenUri : http://localhost:8985/oauth/check_token
+      resource:
+        tokenInfoUri: http://localhost:8985/oauth/check_token
+
+
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        opaque-token:
+          introspection-uri: http://localhost:8985/oauth/check_token
+          client-id: client
+          client-secret: secret
+      client:
+        client-id: web
+        client-secret: secret
+        access-token-uri: http://localhost:8985/oauth/token
+        user-authorization-uri: http://localhost:8985/oauth/authorize
+      resource:
+        token-info-uri: http://localhost:8985/oauth/check_token
+
+
+logging:
+  level:
+    org.springframework.security : DEBUG
+
+
