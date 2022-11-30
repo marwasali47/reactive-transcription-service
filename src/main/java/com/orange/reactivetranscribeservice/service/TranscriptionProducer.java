@@ -13,13 +13,13 @@ public class TranscriptionProducer {
 
 
     public Flux<TranscribeResponse> transcribe(TranscribeRequest request){
-       /* return Flux.fromIterable(
+       return Flux.fromIterable(
                 Arrays.asList(
                         new TranscribeResponse("shello " + request.getMessage()
                 )
-        ));*/
+        ));
 
-        throw new RuntimeException("errorrrrrrrrrrrrrrrrrr");
+       // throw new RuntimeException("errorrrrrrrrrrrrrrrrrr");
 
        /* return Flux.fromStream(Stream.generate(new Supplier<TranscribeResponse>() {
             @Override
